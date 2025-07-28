@@ -1,0 +1,73 @@
+header{
+    height: 50px;
+    background: linear-gradient(90deg, purple 0%, blue 100%);
+    color: white;
+    line-height: 50px;
+}
+
+footer{
+    height: 30px;
+    line-height: 30px;
+    font-size: 8pt;
+    color: white;
+    background: linear-gradient(90deg, red 0%, blue 100%);
+    text-align: center;
+}
+
+section{
+    height: calc(100% - 80px);
+    overflow: auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo{
+    font-size: 20pt;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin: 0 15px;
+}
+
+nav .menu{
+    margin-right: 15px;
+    font-size: 20pt;
+    display: none;
+}
+
+/*Responsiveness*/
+@media(max-width: 768px){
+    nav .menu{
+        display: block;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        background: white;
+        width: 100%;
+    }
+    nav ul.active{
+        display: block;
+    }
+    nav ul li{
+        background: linear-gradient(90deg, blue 0%, purple 100%);
+        padding: 0;
+        margin: 2px 0 0 0;
+    }
+}
