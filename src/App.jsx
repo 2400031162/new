@@ -1,35 +1,41 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-class App extends Component {
-  menuClick(){
-    const navlist = document.getElementById("navlist");
-    navlist.classList.toggle("active");
-  }
+function App() {
+  const students = ["Alice", "Bob", "Charlie", "David", "Emma"];
 
-  render() {
-    return (
-      <>
-        <header>
-          <nav>
-            <div className='logo'>My Website</div>
-            <ul id="navlist">
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Contact</li>
-            </ul>
-            <div className='menu' onClick={()=>this.menuClick()}>&#9776;</div>
-          </nav>
-        </header>
-        <section>
-          <h1>Welcome to My Responsive Website</h1>
-          <p>This design adopts that various screen sizes</p>
-        </section>
-        <footer>Copyright @ 2025. All rights reserved.</footer>
-      </>
-    );
-  }
+  const [presentStudents, setPresentStudents] = useState([]);
+
+  const handleCheckboxChange = (student) => {
+    if (presentStudents.includes(student)) {
+      setPresentStudents(presentStudents.filter((name) => name !== student));
+    } else {
+      setPresentStudents([...presentStudents, student]);
+    }
+  };
+
+  return (
+    <div className="container">
+      <h1>Attendance Tracker</h1>
+      <ul className="student-list">
+        {students.map((student) => (
+          <li key={student} className="student-item">
+            <label>
+              <input
+                type="checkbox"
+                checked={presentStudents.includes(student)}
+                onChange={() => handleCheckboxChange(student)}
+              />
+              {student}
+            </label>
+          </li>
+        ))}
+      </ul>
+      <div className="count">
+        Total Present: {presentStudents.length} / {students.length}
+      </div>
+    </div>
+  );
 }
 
 export default App;

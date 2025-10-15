@@ -1,73 +1,27 @@
-header{
-    height: 50px;
-    background: linear-gradient(90deg, purple 0%, blue 100%);
-    color: white;
-    line-height: 50px;
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-footer{
-    height: 30px;
-    line-height: 30px;
-    font-size: 8pt;
-    color: white;
-    background: linear-gradient(90deg, red 0%, blue 100%);
-    text-align: center;
+.student-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-section{
-    height: calc(100% - 80px);
-    overflow: auto;
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-}
-
-nav .logo{
-    font-size: 20pt;
-    font-weight: bold;
-    margin-left: 15px;
-}
-
-nav ul{
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li{
-    margin: 0 15px;
-}
-
-nav .menu{
-    margin-right: 15px;
-    font-size: 20pt;
-    display: none;
-}
-
-/*Responsiveness*/
-@media(max-width: 768px){
-    nav .menu{
-        display: block;
-    }
-    nav ul{
-        display: none;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        background: white;
-        width: 100%;
-    }
-    nav ul.active{
-        display: block;
-    }
-    nav ul li{
-        background: linear-gradient(90deg, blue 0%, purple 100%);
-        padding: 0;
-        margin: 2px 0 0 0;
-    }
+.count {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #007bff;
 }
